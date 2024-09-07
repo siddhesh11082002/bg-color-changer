@@ -1,3 +1,4 @@
+/* General body styles */
 body {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,9 @@ body {
   margin: 0;
   background-color: #212121;
   color: #fff;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s ease;
+  cursor: url('cursor.png') 16 16, auto;
 }
 
 .button-container {
@@ -19,52 +23,78 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url('cursor.png') 16 16, auto;
   font-size: 16px;
-  color: #212121; /* Default button text color for better contrast */
-  transition: background 0.3s, color 0.3s;
+  color: #212121;
+  transition: background 0.3s, color 0.3s, transform 0.3s ease;
 }
 
 .color-buttons:hover {
+  transform: scale(1.1);
   opacity: 0.8;
 }
 
-#red {
-  background-color: red;
-  color: #fff;
-}
-
-#orange {
-  background-color: orange;
-  color: #fff;
-}
-
-#yellow {
-  background-color: yellow;
-  color: #000;
-}
-
-#green {
-  background-color: green;
-  color: #fff;
-}
-
-#blue {
-  background-color: blue;
-  color: #fff;
-}
-
-#indigo {
-  background-color: indigo;
-  color: #fff;
-}
-
-#violet {
-  background-color: violet;
-  color: #fff;
-}
+/* Individual button styles */
+#red { background-color: red; color: #fff; }
+#orange { background-color: orange; color: #fff; }
+#yellow { background-color: yellow; color: #000; }
+#green { background-color: green; color: #fff; }
+#blue { background-color: blue; color: #fff; }
+#indigo { background-color: indigo; color: #fff; }
+#violet { background-color: violet; color: #fff; }
 
 .plain-text-container {
   margin-top: 20px;
   font-size: 18px;
+}
+
+/* New styles for the stack container */
+.color-stack-container {
+  position: fixed; /* Fixed at the bottom */
+  bottom: 0; /* Position at the bottom of the viewport */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Makes the container scrollable */
+  z-index: 100;
+}
+
+.color-stack-container ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto; /* Enable horizontal scrolling for the queue */
+  scrollbar-width: thin; /* Thin scrollbar for better appearance */
+}
+
+.color-stack-container ul li {
+  font-size: 16px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  min-width: 60px;
+  transition: background 0.3s;
+}
+
+.color-stack-container ul li:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Hover effect on the queue items */
+}
+
+/* Particle Canvas */
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

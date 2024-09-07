@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>bg color changer</title>
+  <title>Background Color Changer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="button-container">
@@ -16,10 +17,21 @@
     <button class="color-buttons" id="indigo">indigo</button>
     <button class="color-buttons" id="violet">violet</button>
   </div>
+
   <div class="plain-text-container">
-    <p>background color is :</p> <p id="editable"></p>
-    
+    <p>Background color is: <span id="editable">#212121</span></p>
   </div>
+
+  <!--  New Box to Display Clicked Colors -->
+  <div class="color-stack-container">
+    <h3>Clicked Colors Stack:</h3>
+    <ul id="colorStack"></ul>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+  
+  <audio id="clickSound" src="sound.wav" preload="auto"></audio>
+
   <script src="script.js"></script>
 </body>
 </html>
